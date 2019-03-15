@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "src/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pack.Employee" table="Employee400">
+		
+		<!-- Column Attribute Used to denote the table name shown in db -->
+
+		<!-- Column used to denote primary key id in database -->
+
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+
+		<!-- Normal column generated -->
+
+		
+		<property name="name" column="Emp_name"></property>
+
+		<!-- Sub-class details given -->
+		<union-subclass name="com.pack.Regular_Employee" table="Employee401">
+			
+			<property name="salary"></property>
+			<property name="bonus"></property>
+		</union-subclass>
+		
+		<union-subclass name="com.pack.Contract_Employee" table="Employee402" >
+			
+			<property name="pay_hour"></property>
+			<property name="contract_duration"></property>
+		</union-subclass>
+	</class>
+
+</hibernate-mapping>

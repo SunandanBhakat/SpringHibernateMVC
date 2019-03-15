@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "src/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pack.model.Employee" table="Employee100">
+
+		<!-- Column Attribute Used to denote the table name shown in db -->
+
+		<!-- Column used to denote primary key id in database -->
+
+		<id name="id" column="Emp_id">
+			<generator class="assigned"></generator>
+		</id>
+		<!-- Normal column generated -->
+
+		<property name="name" column="Emp_name"></property>
+		<property name="salary"></property>
+		<property name="dob"></property>
+		<property name="designation"></property>
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "src/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pack.Employee" table="Employee300"
+		discriminator-value="emp">
+
+		<!-- Column Attribute Used to denote the table name shown in db -->
+
+		<!-- Column used to denote primary key id in database -->
+
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+
+		<!-- Normal column generated -->
+
+		<discriminator column="empType" type="string"></discriminator> <!-- Always located above the property tag -->
+		<property name="name" column="Emp_name"></property>
+
+		<!-- Sub-class details given -->
+		<subclass name="com.pack.Regular_Employee"
+			discriminator-value="reg_emp">
+			<property name="salary"></property>
+			<property name="bonus"></property>
+		</subclass>
+		<subclass name="com.pack.Contract_Employee"
+			discriminator-value="con_emp">
+			<property name="pay_hour"></property>
+			<property name="contract_duration"></property>
+		</subclass>
+	</class>
+
+</hibernate-mapping>
