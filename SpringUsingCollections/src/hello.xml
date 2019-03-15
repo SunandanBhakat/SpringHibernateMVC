@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Using Setter Injection since no constructor is present -->
+
+
+
+	<bean id="collection" class="com.pack.JavaCollection">
+		<property name="addressList">
+			<list>
+				<value>India</value>
+				<value>Pakistan</value>
+				<value>Australia</value>
+				<value>China</value>
+				<value>Bangladesh</value>
+				<value>Afganistan</value>
+			</list>
+
+		</property>
+
+		<property name="addressSet">
+			<set>
+
+				<value>Hello</value>
+				<value>Rahul</value>
+				<value>Shubham</value>
+				<value>Sunandan</value>
+				<value>Arnab</value>
+			</set>
+		</property>
+		
+		<property name="addressMap">
+		<map>
+		<entry key="1" value="Chinese"></entry>
+		<entry key="2" value="Continental"></entry>
+		<entry key="3" value="Indian"></entry>
+		<entry key="4" value="Mughlai"></entry>
+		<entry key="5" value="Bengali"></entry>		
+		</map>
+		
+		</property>
+		
+		<property name="addressProp">
+		<props>
+		<prop key="one">Maths</prop>
+		<prop key="two">Physics</prop>
+		<prop key="three">Computer Science</prop>
+		<prop key="four">Chemistry</prop>
+		<prop key="five">Biology</prop>
+		
+		</props>
+		
+		</property>
+
+	</bean>
+
+
+
+</beans> 
