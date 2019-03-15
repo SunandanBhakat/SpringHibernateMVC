@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Using Setter Injection since no constructor is present -->
+
+
+
+
+	<!-- <bean id="spell" class="com.pack.SpellChecker"> </bean> -->
+
+	<!-- Auto wire by name -->
+
+	<bean id="SpellChecker" class="com.pack.SpellChecker">
+
+	</bean>
+
+<!-- Autowire by constructor -->
+	<bean id="text" class="com.pack.TextEditor" autowire="constructor">
+		<!-- <property name="name" value="hello"></property> -->
+		<constructor-arg index="0" value="Sunandan"></constructor-arg>
+
+
+
+	</bean>
+
+
+
+
+</beans> 
